@@ -4,7 +4,7 @@ import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
-import com.virissimo.smartlist.entity.ListaCompra
+import com.virissimo.smartlist.model.ListaCompra
 
 @Dao
 interface ListaCompraDao {

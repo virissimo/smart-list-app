@@ -4,9 +4,9 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.virissimo.smartlist.entity.Estabelecimento
-import com.virissimo.smartlist.entity.ListaCompra
-import com.virissimo.smartlist.entity.Produto
+import com.virissimo.smartlist.model.Estabelecimento
+import com.virissimo.smartlist.model.ListaCompra
+import com.virissimo.smartlist.model.Produto
 
 @Database(
     entities = [ListaCompra::class, Produto::class, Estabelecimento::class],
