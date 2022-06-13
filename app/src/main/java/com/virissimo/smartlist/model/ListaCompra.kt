@@ -9,12 +9,12 @@ class ListaCompra(
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "listaId")
-    var listaId: Int,
+    var listaId: Int = 0,
 
     @ColumnInfo(name = "titulo")
-    var titulo: String,
+    var titulo: String = "",
 
     @ColumnInfo(name = "descricao")
-    var descricao: String
+    var descricao: String? = ""
 
 )

@@ -1,15 +1,20 @@
 package com.virissimo.smartlist
 
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
+import br.virissimo.smartlist.dao.AppDatabase
 import com.google.android.material.snackbar.Snackbar
 import com.virissimo.smartlist.databinding.ActivityMainBinding
+import com.virissimo.smartlist.model.ListaCompra
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,8 +34,26 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Ação de criar nova lista", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+
+            val alertDialog: AlertDialog? = this?.let {
+                val builder = AlertDialog.Builder(it)
+                builder.apply {
+                    setPositiveButton(R.string.salvar,
+                        DialogInterface.OnClickListener { dialog, id ->
+                            var listaNova = ListaCompra()
+                            listaNova.titulo = findViewById<TextView>(R.id.nova_lista_compra_input).text.toString()
+                            AppDatabase.getInstance(context).listaCompraDao.insertListaCompra(listaNova)
+                        })
+                    setNegativeButton(R.string.cancelar,
+                        DialogInterface.OnClickListener { dialog, id ->
+                        })
+                    setTitle(R.string.titulo_nova_lista)
+                    setView(R.layout.nova_lista_compra_dialog_content)
+                }
+                // Create the AlertDialog
+                builder.create()
+                builder.show()
+            }
         }
     }
 
