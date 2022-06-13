@@ -7,7 +7,8 @@ import br.virissimo.smartlist.enum.Medida
 
 @Entity
 data class Produto(
-    @PrimaryKey
+
+    @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "produtoId")
     val produtoId: Long,
 

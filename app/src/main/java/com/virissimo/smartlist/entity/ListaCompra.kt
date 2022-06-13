@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 @Entity
 class ListaCompra(
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "listaId")
     val listaId: Long,
 

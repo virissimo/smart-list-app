@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class Estabelecimento(
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "estabelecimentoId")
     val estabelecimentoId: Long,
 
