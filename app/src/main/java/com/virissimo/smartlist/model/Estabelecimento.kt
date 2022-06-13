@@ -8,17 +8,17 @@ import androidx.room.PrimaryKey
 data class Estabelecimento(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "estabelecimentoId")
-    val estabelecimentoId: Int,
+    var estabelecimentoId: Int,
 
     @ColumnInfo(name = "nome")
-    val nome: String,
+    var nome: String,
 
     @ColumnInfo(name = "latitude")
-    val latitude: Long,
+    var latitude: Long,
 
     @ColumnInfo(name = "longitude")
-    val longitude: Long,
+    var longitude: Long,
 
     @ColumnInfo(name = "urlImagem")
-    val urlImagem: String,
+    var urlImagem: String,
 )

@@ -9,12 +9,12 @@ class ListaCompra(
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "listaId")
-    val listaId: Int,
+    var listaId: Int,
 
     @ColumnInfo(name = "titulo")
-    val titulo: String,
+    var titulo: String,
 
     @ColumnInfo(name = "descricao")
-    val descricao: String
+    var descricao: String
 
 )

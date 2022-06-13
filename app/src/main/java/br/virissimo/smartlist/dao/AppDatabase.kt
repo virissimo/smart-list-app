@@ -30,14 +30,12 @@ abstract class AppDatabase : RoomDatabase() {
                         AppDatabase::class.java, "smartlist-database"
                     )
                         .fallbackToDestructiveMigration()
+                        .allowMainThreadQueries()
                         .build()
                     INSTANCE = instance
                 }
                 return instance
             }
         }
-
     }
-
-
 }

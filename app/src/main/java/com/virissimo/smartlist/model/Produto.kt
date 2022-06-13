@@ -10,18 +10,18 @@ data class Produto(
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "produtoId")
-    val produtoId: Int,
+    var produtoId: Int,
 
     @ColumnInfo(name = "titulo")
-    val titulo: String,
+    var titulo: String,
 
     @ColumnInfo(name = "descricao")
-    val descricao: String,
+    var descricao: String,
 
     @ColumnInfo(name = "peso")
-    val peso: Double,
+    var peso: Double,
 
     @ColumnInfo(name = "medida")
-    val medida: Medida
+    var medida: Medida
 )
 
